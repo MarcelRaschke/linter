@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "atom-package-deps": "^5.1.0",
-    "atom-select-list": "^0.7.2",
+    "atom-select-list": "^0.8.0",
     "lodash": "^4.17.15",
     "minimatch": "^3.0.3"
   },
