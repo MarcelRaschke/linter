@@ -2,12 +2,12 @@
 
 import Path from 'path'
 import { it } from 'jasmine-fix'
-import Commands from '../lib/commands'
+import { Commands } from '../dist/commands'
 
 let commands
 
-describe('Linter Commands', function() {
-  beforeEach(function() {
+describe('Linter Commands', function () {
+  beforeEach(function () {
     if (commands) {
       commands.dispose()
     }
@@ -15,7 +15,7 @@ describe('Linter Commands', function() {
     // Initial workspace view
     atom.views.getView(atom.workspace)
   })
-  it('properly notifies its listeners of command execution', async function() {
+  it('properly notifies its listeners of command execution', async function () {
     let lintCalled = 0
     let debugCalled = 0
     let toggleActiveCalled = 0

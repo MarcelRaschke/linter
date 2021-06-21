@@ -1,12 +1,12 @@
 /* @flow */
 
-import UIRegistry from '../lib/ui-registry'
+import UIRegistry from '../dist/ui-registry'
 
 let uiRegistry
 let uiProvider: Object
 
-describe('UI Registry', function() {
-  beforeEach(function() {
+describe('UI Registry', function () {
+  beforeEach(function () {
     if (uiRegistry) {
       uiRegistry.dispose()
     }
@@ -20,7 +20,7 @@ describe('UI Registry', function() {
     }
   })
 
-  it('works in a lifecycle', function() {
+  it('works in a lifecycle', function () {
     const testObjA: Object = {}
     const testObjB: Object = {}
     const testObjC: Object = {}
@@ -32,11 +32,11 @@ describe('UI Registry', function() {
 
     uiRegistry.didBeginLinting(testObjB)
     expect(uiProvider.didBeginLinting.mostRecentCall.args[0]).toBe(testObjB)
-    expect(uiProvider.didBeginLinting.mostRecentCall.args[1]).toBe(null)
+    expect(uiProvider.didBeginLinting.mostRecentCall.args[1]).toBe(undefined)
 
     uiRegistry.didFinishLinting(testObjC)
     expect(uiProvider.didFinishLinting.mostRecentCall.args[0]).toBe(testObjC)
-    expect(uiProvider.didFinishLinting.mostRecentCall.args[1]).toBe(null)
+    expect(uiProvider.didFinishLinting.mostRecentCall.args[1]).toBe(undefined)
 
     uiRegistry.dispose()
     expect(uiProvider.dispose).toHaveBeenCalled()
